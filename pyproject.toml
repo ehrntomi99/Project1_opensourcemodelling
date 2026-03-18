@@ -1,0 +1,10 @@
+[tool.ruff]
+# Maximale Länge einer Code-Zeile
+line-length = 88
+
+# Aktiviert Basis-Fehlerprüfung (E), logische Fehler (F) und Import-Sortierung (I)
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+# Verwendet standardmäßig doppelte Anführungszeichen
+quote-style = "double"

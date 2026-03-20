@@ -11,3 +11,10 @@ def test_torques_15000():
     """ Test torque at speed of 15000 rpm """
     M_n_15, M_max_15 = asynchronous_motor.torques_15000(150, 300)
     assert round(M_max_15, 0) == 100
+
+def test_torque_curve():
+    """ Check if logic determines 2500 constant torque, 10000 field weakening """
+    results = asynchronous_motor.torque_curve([2500, 10000], 200, 5000)
+    
+    assert results[0] == 200
+    assert results[1] == 100

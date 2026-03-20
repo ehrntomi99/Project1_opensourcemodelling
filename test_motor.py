@@ -9,5 +9,5 @@ def test_torques():
 
 def test_torques_15000():
     """ Test torque at speed of 15000 rpm """
-    M_n_15, M_max_15 = asynchronous_motor.torques_15000(300, 150, 5000, 15000)
+    M_n_15, M_max_15 = asynchronous_motor.torques_15000(150, 300)
     assert round(M_max_15, 0) == 100

@@ -5,6 +5,7 @@ import math
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 
 def torques (P_max, P_min, n_n):
@@ -81,4 +82,23 @@ def characteristic_curve():
     plt.savefig('Characteristic_curve.png')
     
 characteristic_curve()
- 
+
+
+
+
+"""Stylized data set"""
+#Test-speed 
+n_test = [0, 2500, 5000, 7500, 10000, 12500, 15000]
+
+#Calculation of torques
+m_test = torque_curve(n_test, 381.97, 5000)
+
+#Building data set
+df_motor = pd.DataFrame({
+    'Speed [min^-1]': n_test,
+    'Torque [Nm]': [round(m, 2) for m in m_test]
+})
+
+#Show data set
+print("Stylized Dataset - Motor Characteristics:")
+display(df_motor)

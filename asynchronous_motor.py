@@ -101,4 +101,4 @@ df_motor = pd.DataFrame({
 
 #Show data set
 print("Stylized Dataset - Motor Characteristics:")
-display(df_motor)
+print(df_motor)

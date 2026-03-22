@@ -12,16 +12,18 @@ The scope of this project is to model and visualize the characteristics of an **
 ## Purpose of the Functions
 
 ### 1. torques
-* **Purpose:** Calculates the maximum torque ($M_{max}$) and the rated torque ($M_n$) of the motor.
-* **Input:** Maximum power, rated power, and rated speed ($n_n$).
-* **Logic:** Uses the physical formula $M = \frac{P}{\omega}$ where $\omega$ is derived from the speed in rpm.
+* **Purpose:** Calculate the maximum torque ($M_{max}$) and the rated torque ($M_n$) of the motor
+* **Input:** Maximum power, rated power, and rated speed ($n_n$)
+* **Logic:** Uses the physical formula $M = \frac{P}{\omega}$ 
 
 ### 2. torques_15000
-* **Purpose:** Determines the available torque at the motor's maximum speed (e.g., 15,000 rpm).
-* **Scope:** It specifically models the torque drop in the field weakening region, where torque decreases as speed increases to keep power constant.
+* **Purpose:** Define the available torque at the motor's defined maximum speed
+* **Input:** Rated torque ($M_n$), maximum torque ($M_{max}$), rated speed ($n_n$), and maximum speed ($n_{max}$)
+* **Logic:** Field weakening formula $M_{Lowest} = M \cdot (n_n / n_{max})$
 
 ### 3. torque_curve
-* **Purpose:** Generates a complete set of torque values for a list of different speeds.
-* **Logic:** It uses a loop with an `if-else` condition:
-    * If $n \leq n_n$: Torque remains constant ($M_{constant}$).
-    * If $n > n_n$: Torque is reduced using the ratio $\frac{n_n}{n}$.
+* **Purpose:** Generates a dataset of torque values for a range of different speeds
+* **Input:** List of speed values ($n\_list$), constant torque ($M_{constant}$), rated speed ($n_n$).
+* **Logic:** Uses a loop with an if-else condition:
+    * If $n \le n_n$: Torque remains at $M_{constant}$ (Constant Torque Region).
+    * If $n > n_n$: Torque is reduced by the factor $(n_n / n)$ (Field Weakening Region).

@@ -23,7 +23,16 @@ The scope of this project is to model and visualize the characteristics of an **
 
 ### 3. torque_curve
 * **Purpose:** Generates a dataset of torque values for a range of different speeds
-* **Input:** List of speed values ($n\_list$), constant torque ($M_{constant}$), rated speed ($n_n$).
+* **Input:** List of speed values ($n\_list$), constant torque ($M_{constant}$), rated speed ($n_n$)
 * **Logic:** Uses a loop with an if-else condition:
-    * If $n \le n_n$: Torque remains at $M_{constant}$ (Constant Torque Region).
-    * If $n > n_n$: Torque is reduced by the factor $(n_n / n)$ (Field Weakening Region).
+    * If $n \le n_n$: Torque remains at $M_{constant}$ (Constant Torque Region)
+    * If $n > n_n$: Torque is reduced by the factor $(n_n / n)$ (Field Weakening Region)
+
+## AI Disclosure
+This project was developed with the assistance of artificial intelligence of Gemini 3 Flash for the following steps:
+* **Code Optimization:** I tried to implement the functions by myself, because my programming skills are a bit rusty because my last implemented project was a while ago. For the 
+
+
+
+
+

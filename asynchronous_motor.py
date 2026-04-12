@@ -2,6 +2,7 @@
 #Given parameters are continious- and maximum power, maximum speed and rated speed
 
 import math
+import math
 
 import matplotlib.pyplot as plt
 import numpy as np
